@@ -8,11 +8,9 @@ import { IconRow } from "@/components/site/IconRow";
 import { PageShell } from "@/components/site/PageShell";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionHeading } from "@/components/site/SectionHeading";
-import { SectionImage } from "@/components/site/SectionImage";
 import { Seo } from "@/components/site/Seo";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { SITE_IMAGES } from "@/content/site-images";
 import {
   COMPANY,
   PRIMARY_PHONE,
@@ -64,22 +62,25 @@ const Index = () => {
                 <div className="bubble-orbs pointer-events-none absolute inset-0 opacity-80" />
                 <BrandLogo className="hero-watermark absolute -right-8 top-6 w-52 sm:w-64" decorative />
                 <div className="relative space-y-8">
-                  <div className="relative">
-                    <SectionImage
-                      alt={SITE_IMAGES.homeHero.alt}
-                      aspect="portrait"
-                      className="overflow-hidden rounded-[1.75rem]"
-                      overlay
-                      priority
-                      src={SITE_IMAGES.homeHero.src}
-                    />
-                    <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-white/85 px-3 py-2 text-sm font-medium text-foreground shadow-[var(--shadow-soft)]">
+                  <div className="flex items-center gap-3">
+                    <div className="rounded-2xl bg-primary/10 p-3 text-primary">
+                      <Check className="size-4 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">Aquatron usluge</p>
+                      <p className="mt-1 text-sm text-muted-foreground">Pregled glavnih resenja za osvezenje</p>
+                    </div>
+                  </div>
+                  <div className="rounded-[1.75rem] border border-white/75 bg-white/80 p-5 shadow-[var(--shadow-soft)]">
+                    <div className="inline-flex items-center gap-2 rounded-full bg-primary/5 px-3 py-2 text-sm font-medium text-foreground">
                       <Check className="size-4 text-primary" />
                       Resenje za osvezenje
                     </div>
-                    <div className="absolute inset-x-4 bottom-4 rounded-[1.5rem] border border-white/70 bg-white/80 p-4 backdrop-blur-sm">
-                      <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">Aquatron usluge</p>
-                      <p className="mt-1 text-sm text-muted-foreground">Pregled glavnih resenja za osvezenje</p>
+                    <div className="mt-5 space-y-2">
+                      <p className="text-lg font-semibold text-foreground">Rentiranje, prodaja i dostava u jednom toku</p>
+                      <p className="text-sm leading-6 text-muted-foreground">
+                        Brz pregled usluga i jasan sledeci korak bez preopterecenja pocetne stranice.
+                      </p>
                     </div>
                   </div>
                   <div className="grid gap-4">
