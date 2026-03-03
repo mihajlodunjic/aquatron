@@ -4,7 +4,9 @@ import { CtaBanner } from "@/components/site/CtaBanner";
 import { PageShell } from "@/components/site/PageShell";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionHeading } from "@/components/site/SectionHeading";
+import { SectionImage } from "@/components/site/SectionImage";
 import { Seo } from "@/components/site/Seo";
+import { SITE_IMAGES } from "@/content/site-images";
 import { FAQ_ITEMS, SEO, SERVICES } from "@/content/site-content";
 
 const ServicesPage = () => {
@@ -17,7 +19,16 @@ const ServicesPage = () => {
           <SectionHeading
             description="Aquatron objedinjuje rentiranje aparata za vodu, prodaju aparata i distribuciju vode u modelima saradnje koji prate potrebe korisnika."
             eyebrow="Usluge"
-            title="Tri pravca saradnje, jedno jasno rešenje"
+            title="Tri pravca saradnje, jedno jasno resenje"
+          />
+        </Reveal>
+        <Reveal delay={100}>
+          <SectionImage
+            alt={SITE_IMAGES.servicesFeature.alt}
+            aspect="wide"
+            className="mt-8"
+            overlay
+            src={SITE_IMAGES.servicesFeature.src}
           />
         </Reveal>
 
@@ -63,9 +74,9 @@ const ServicesPage = () => {
       <section className="container py-12 sm:py-16">
         <Reveal>
           <SectionHeading
-            description="Najčešća pitanja koja pomažu da brže procenite koja vrsta saradnje ima najviše smisla za vaš prostor."
+            description="Najcesca pitanja koja pomazu da brze procenite koja vrsta saradnje ima najvise smisla za vas prostor."
             eyebrow="FAQ"
-            title="Česta pitanja"
+            title="Cesta pitanja"
           />
         </Reveal>
         <Reveal delay={120}>
@@ -86,8 +97,8 @@ const ServicesPage = () => {
 
       <CtaBanner
         className="pt-6"
-        description="Javite se i opišite broj korisnika, prostor i očekivani ritam potrošnje. Aquatron zatim predlaže najpraktičniji model saradnje."
-        title="Niste sigurni da li vam više odgovara rentiranje, kupovina ili distribucija vode?"
+        description="Javite se i opisite broj korisnika, prostor i ocekivani ritam potrosnje. Aquatron zatim predlaze najprakticniji model saradnje."
+        title="Niste sigurni da li vam vise odgovara rentiranje, kupovina ili distribucija vode?"
       />
     </PageShell>
   );

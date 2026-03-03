@@ -5,9 +5,11 @@ import { IconRow } from "@/components/site/IconRow";
 import { PageShell } from "@/components/site/PageShell";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionHeading } from "@/components/site/SectionHeading";
+import { SectionImage } from "@/components/site/SectionImage";
 import { Seo } from "@/components/site/Seo";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { SITE_IMAGES } from "@/content/site-images";
 import { DEVICE_CATEGORIES, RECOMMENDATION_FACTORS, SEO } from "@/content/site-content";
 
 const DevicesPage = () => {
@@ -18,9 +20,18 @@ const DevicesPage = () => {
       <section className="container px-6 py-14 sm:py-16 lg:py-20">
         <Reveal>
           <SectionHeading
-            description="Umesto izmišljanja konkretnih modela, Aquatron pristupa izboru aparata kroz kategorije koje pomažu da lakše procenite kakvo rešenje odgovara vašem prostoru."
+            description="Umesto izmisljanja konkretnih modela, Aquatron pristupa izboru aparata kroz kategorije koje pomazu da lakse procenite kakvo resenje odgovara vasem prostoru."
             eyebrow="Aparati"
             title="Pregled kategorija aparata za vodu"
+          />
+        </Reveal>
+        <Reveal delay={100}>
+          <SectionImage
+            alt={SITE_IMAGES.devicesFeature.alt}
+            aspect="wide"
+            className="mt-8"
+            overlay
+            src={SITE_IMAGES.devicesFeature.src}
           />
         </Reveal>
 
@@ -46,7 +57,7 @@ const DevicesPage = () => {
                       ))}
                     </ul>
                     <Button asChild variant="outline">
-                      <Link to="/kontakt">Zatraži ponudu</Link>
+                      <Link to="/kontakt">Zatrazi ponudu</Link>
                     </Button>
                   </CardContent>
                 </Card>
@@ -59,9 +70,9 @@ const DevicesPage = () => {
       <section className="container py-12 sm:py-16">
         <Reveal>
           <SectionHeading
-            description="Preporuka nije univerzalna. Najbolji izbor zavisi od toga ko koristi aparat, gde će stajati i koliko je intenzivna svakodnevna potrošnja."
+            description="Preporuka nije univerzalna. Najbolji izbor zavisi od toga ko koristi aparat, gde ce stajati i koliko je intenzivna svakodnevna potrosnja."
             eyebrow="Preporuka"
-            title="Kako biramo odgovarajući aparat"
+            title="Kako biramo odgovarajuci aparat"
           />
         </Reveal>
         <Reveal delay={120}>
@@ -71,8 +82,8 @@ const DevicesPage = () => {
 
       <CtaBanner
         className="pt-6"
-        description="Pošaljite osnovne informacije o prostoru i očekivanoj potrošnji, a Aquatron će pomoći da izbor aparata bude jasan i praktičan."
-        title="Treba vam preporuka kategorije aparata bez nagađanja?"
+        description="Posaljite osnovne informacije o prostoru i ocekivanoj potrosnji, a Aquatron ce pomoci da izbor aparata bude jasan i praktican."
+        title="Treba vam preporuka kategorije aparata bez nagadjanja?"
       />
     </PageShell>
   );

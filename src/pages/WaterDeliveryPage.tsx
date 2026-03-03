@@ -3,7 +3,9 @@ import { IconRow } from "@/components/site/IconRow";
 import { PageShell } from "@/components/site/PageShell";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionHeading } from "@/components/site/SectionHeading";
+import { SectionImage } from "@/components/site/SectionImage";
 import { Seo } from "@/components/site/Seo";
+import { SITE_IMAGES } from "@/content/site-images";
 import { DELIVERY_BENEFITS, DELIVERY_PLANS, DELIVERY_STEPS, SEO } from "@/content/site-content";
 
 const WaterDeliveryPage = () => {
@@ -16,20 +18,23 @@ const WaterDeliveryPage = () => {
           <SectionHeading
             description="Dostava vode je organizovana tako da prati stvarne potrebe prostora, bilo da je saradnja jednokratna, redovna ili potpuno fleksibilna."
             eyebrow="Dostava vode"
-            title="Kako funkcioniše snabdevanje vodom"
+            title="Kako funkcionise snabdevanje vodom"
           />
         </Reveal>
         <Reveal delay={120}>
-          <IconRow className="mt-8" columns={3} items={DELIVERY_STEPS} />
+          <div className="mt-8 grid gap-8 xl:grid-cols-[1.05fr_0.95fr] xl:items-center">
+            <SectionImage alt={SITE_IMAGES.deliveryFeature.alt} aspect="wide" overlay src={SITE_IMAGES.deliveryFeature.src} />
+            <IconRow columns={3} items={DELIVERY_STEPS} />
+          </div>
         </Reveal>
       </section>
 
       <section className="container py-12 sm:py-16">
         <Reveal>
           <SectionHeading
-            description="Aquatron pristupa dostavi kao delu šireg sistema osveženja, sa ciljem da voda bude dostupna onda kada je korisnicima potrebna."
+            description="Aquatron pristupa dostavi kao delu sireg sistema osvezenja, sa ciljem da voda bude dostupna onda kada je korisnicima potrebna."
             eyebrow="Benefiti"
-            title="Zašto organizovana dostava pravi razliku"
+            title="Zasto organizovana dostava pravi razliku"
           />
         </Reveal>
         <Reveal delay={120}>
@@ -40,7 +45,7 @@ const WaterDeliveryPage = () => {
       <section className="container py-12 sm:py-16">
         <Reveal>
           <SectionHeading
-            description="Saradnja može biti prilagođena intenzitetu korišćenja, sezonskim promenama i načinu na koji vaš prostor funkcioniše."
+            description="Saradnja moze biti prilagodjena intenzitetu koriscenja, sezonskim promenama i nacinu na koji vas prostor funkcionise."
             eyebrow="Planovi saradnje"
             title="Modeli dostave vode"
           />
@@ -52,7 +57,7 @@ const WaterDeliveryPage = () => {
 
       <CtaBanner
         className="pt-6"
-        description="Javite se i definišemo ritam snabdevanja koji odgovara vašem prostoru, korisnicima i načinu rada."
+        description="Javite se i definisemo ritam snabdevanja koji odgovara vasem prostoru, korisnicima i nacinu rada."
         title="Potrebna vam je dostava vode sa jasnim dogovorom i kontinuitetom?"
       />
     </PageShell>

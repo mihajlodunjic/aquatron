@@ -8,9 +8,11 @@ import { IconRow } from "@/components/site/IconRow";
 import { PageShell } from "@/components/site/PageShell";
 import { Reveal } from "@/components/site/Reveal";
 import { SectionHeading } from "@/components/site/SectionHeading";
+import { SectionImage } from "@/components/site/SectionImage";
 import { Seo } from "@/components/site/Seo";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { SITE_IMAGES } from "@/content/site-images";
 import {
   COMPANY,
   PRIMARY_PHONE,
@@ -33,11 +35,11 @@ const Index = () => {
             <Reveal className="relative">
               <div className="space-y-6">
                 <span className="inline-flex rounded-full border border-primary/20 bg-white/75 px-4 py-2 text-sm font-medium text-primary shadow-[var(--shadow-soft)]">
-                  {COMPANY.name} • {COMPANY.supportLine}
+                  {COMPANY.name} - {COMPANY.supportLine}
                 </span>
                 <div className="space-y-5">
                   <h1 className="max-w-3xl text-5xl font-semibold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
-                    Rešenje za <span className="gradient-text">osveženje.</span>
+                    Resenje za <span className="gradient-text">osvezenje.</span>
                   </h1>
                   <p className="max-w-2xl text-lg leading-8 text-muted-foreground sm:text-xl">
                     Rentiranje i prodaja aparata za vodu + distribucija vode. Uz Vas od {COMPANY.founded}. godine.
@@ -62,13 +64,22 @@ const Index = () => {
                 <div className="bubble-orbs pointer-events-none absolute inset-0 opacity-80" />
                 <BrandLogo className="hero-watermark absolute -right-8 top-6 w-52 sm:w-64" decorative />
                 <div className="relative space-y-8">
-                  <div className="flex items-center gap-3">
-                    <div className="rounded-2xl bg-primary/10 p-3 text-primary">
-                      <Check className="size-5" />
+                  <div className="relative">
+                    <SectionImage
+                      alt={SITE_IMAGES.homeHero.alt}
+                      aspect="portrait"
+                      className="overflow-hidden rounded-[1.75rem]"
+                      overlay
+                      priority
+                      src={SITE_IMAGES.homeHero.src}
+                    />
+                    <div className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full bg-white/85 px-3 py-2 text-sm font-medium text-foreground shadow-[var(--shadow-soft)]">
+                      <Check className="size-4 text-primary" />
+                      Resenje za osvezenje
                     </div>
-                    <div>
+                    <div className="absolute inset-x-4 bottom-4 rounded-[1.5rem] border border-white/70 bg-white/80 p-4 backdrop-blur-sm">
                       <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">Aquatron usluge</p>
-                      <p className="text-sm text-muted-foreground">Pregled glavnih rešenja za osveženje</p>
+                      <p className="mt-1 text-sm text-muted-foreground">Pregled glavnih resenja za osvezenje</p>
                     </div>
                   </div>
                   <div className="grid gap-4">
@@ -93,7 +104,7 @@ const Index = () => {
                   </div>
                   <div className="rounded-[1.5rem] border border-primary/10 bg-primary/5 px-5 py-4">
                     <p className="text-sm font-medium text-foreground">
-                      Jedan kontakt, jasan predlog i dogovoreno rešenje za aparat i distribuciju vode.
+                      Jedan kontakt, jasan predlog i dogovoreno resenje za aparat i distribuciju vode.
                     </p>
                   </div>
                 </div>
@@ -122,9 +133,9 @@ const Index = () => {
       <section className="container py-12 sm:py-16">
         <Reveal>
           <SectionHeading
-            description="Tri pravca saradnje koji se uklapaju u različite prostore, navike korišćenja i modele snabdevanja."
+            description="Tri pravca saradnje koji se uklapaju u razlicite prostore, navike koriscenja i modele snabdevanja."
             eyebrow="Usluge"
-            title="Šta Aquatron pokriva"
+            title="Sta Aquatron pokriva"
           />
         </Reveal>
         <Reveal delay={120}>
@@ -143,7 +154,7 @@ const Index = () => {
                   <CardContent className="space-y-6">
                     <p className="text-sm leading-6 text-muted-foreground">{item.description}</p>
                     <Button asChild variant="outline">
-                      <Link to="/usluge">Saznaj više</Link>
+                      <Link to="/usluge">Saznaj vise</Link>
                     </Button>
                   </CardContent>
                 </Card>
@@ -156,7 +167,7 @@ const Index = () => {
       <section className="container py-12 sm:py-16">
         <Reveal>
           <SectionHeading
-            description="Proces je osmišljen tako da korisnik brzo razume sledeći korak i bez komplikacija stigne do predloga rešenja."
+            description="Proces je osmisljen tako da korisnik brzo razume sledeci korak i bez komplikacija stigne do predloga resenja."
             eyebrow="Proces"
             title="Kako izgleda saradnja"
           />
@@ -188,8 +199,8 @@ const Index = () => {
       <section className="container py-12 sm:py-16">
         <Reveal>
           <SectionHeading
-            description="Saradnja je vođena praktičnošću, jasnom komunikacijom i rešenjima koja imaju smisla za svakodnevni rad ili boravak."
-            eyebrow="Zašto Aquatron"
+            description="Saradnja je vodjena prakticnoscu, jasnom komunikacijom i resenjima koja imaju smisla za svakodnevni rad ili boravak."
+            eyebrow="Zasto Aquatron"
             title="Pouzdan partner za vodu i aparate"
           />
         </Reveal>
@@ -200,8 +211,8 @@ const Index = () => {
 
       <CtaBanner
         className="pt-8"
-        description="Pozovite Aquatron ili pošaljite upit i dobićete jasan sledeći korak za aparat, dostavu vode ili kombinovano rešenje."
-        title="Treba vam jednostavno i pouzdano rešenje za osveženje?"
+        description="Pozovite Aquatron ili posaljite upit i dobicete jasan sledeci korak za aparat, dostavu vode ili kombinovano resenje."
+        title="Treba vam jednostavno i pouzdano resenje za osvezenje?"
       />
     </PageShell>
   );
