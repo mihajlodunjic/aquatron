@@ -2,7 +2,7 @@ import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
-export const LOGO_SOURCES = ["/aquatron-logo.png", "/logo.png", "/aquatron.png", "/logo.jpg"] as const;
+export const LOGO_SOURCES = ["/aquatron-logo.png", "/logo.png", "/aquatron.png"] as const;
 export const LOGO_SRC = LOGO_SOURCES[0];
 
 type BrandLogoProps = {
